@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listy</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+        <h1 class="title">
+            Listy
+        </h1>
+        <p class="subtitle">
+            list anything that u might forget: <strong>grocery, xmas shopping, wishlist, etc...</strong>
+        </p>
+        </div>
+    </section>
+    <!--This will contain a button to add another Item-->
+    <section class="container">
+        <div class="operator">
+            <div class="level-right">
+                <div class="level-item">
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <button class="button is-link is-outlined">
+                            Make a New List
+                            </button>
+                        </p>
+                        <p class="control">
+                            <button class="button is-success is-outlined">
+                            Add New Item
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--This will show List result-->
+    <section class="container">
+        <div class="listResult">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th><abbr title="ID">ID</abbr></th>
+                    <th><abbr title"Item">Item</abbr></th>
+                    <th><abbr title="Amount">Amount</abbr></th>
+                    <th><abbr title="Info">Info</abbr></th>
+                    <th><abbr title="Note">Note</abbr></th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <th><abbr title="ID"></abbr></th>
+                    <th><abbr title="Item"></abbr></th>
+                    <th><abbr title="Amount">999</abbr></th>
+                    <th><abbr title="Info">$999</abbr></th>
+                    <th><abbr title="Note"></abbr></th>
+                </tfoot>
+                <tr>
+                <th>1</th>
+                <td>T-Shirt</td>
+                <td>10</td>
+                <td>$10</td>
+                <td>Find cheaper to buy in bulk</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section class="container">
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Item</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Enter Item">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="field">
+                    <label class="label">Amount</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Enter Item">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="field">
+                    <label class="label">Info</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Enter Item">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="field">
+                    <label class="label">Note</label>
+                    <div class="control">
+                        <textarea class="textarea" type="text" rows="1" placeholder="Type notes..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--This will contain buttons to Save, Cancel, Delete Item input-->
+    <section class="container">
+        <div class="operator">
+            <div class="level-right">
+                <div class="level-item">
+                    <div class="field is-grouped">
+                    <p class="control">
+                        <button class="button is-link">
+                        Save Item to List
+                        </button>
+                    </p>
+                    <p class="control">
+                        <button class="button">
+                        Cancel
+                        </button>
+                    </p>
+                    <p class="control">
+                        <button class="button is-danger">
+                        Delete Item
+                        </button>
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
