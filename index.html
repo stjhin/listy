@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="index.js"></script>
 </head>
 <body>
     <section class="section">
@@ -32,13 +34,13 @@
                             </button>
                         </p>
                         <p class="control">
-                            <button class="button is-success is-outlined">
+                            <button id="addNewItem" class="button is-success is-outlined">
                             Add New Item
                             </button>
                         </p>
                         <p class="control">
                             <button class="button is-danger is-outlined">
-                            Delete Item
+                            Delete Item from List
                             </button>
                         </p>
                     </div>
@@ -52,6 +54,7 @@
             <table class="table">
                 <thead>
                     <tr>
+                    <th id="deleteIcon"></th>
                     <th><abbr title="ID">ID</abbr></th>
                     <th><abbr title"Item">Item</abbr></th>
                     <th><abbr title="Amount">Amount</abbr></th>
@@ -60,6 +63,7 @@
                     </tr>
                 </thead>
                 <tfoot>
+                    <td id="deleteIcon"></td>
                     <th><abbr title="ID"></abbr></th>
                     <th><abbr title="Item"></abbr></th>
                     <th><abbr title="Amount">999</abbr></th>
@@ -67,6 +71,7 @@
                     <th><abbr title="Note"></abbr></th>
                 </tfoot>
                 <tr>
+                <th><a id="deleteIcon" class="delete"></a></th>
                 <th>1</th>
                 <td>T-Shirt</td>
                 <td>10</td>
@@ -76,13 +81,14 @@
             </table>
         </div>
     </section>
+<main class="newItem">
     <section class="container">
         <div class="columns">
             <div class="column">
                 <div class="field">
                     <label class="label">Item</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Enter Item">
+                        <input class="input" type="text" placeholder="Enter Item" required>
                     </div>
                 </div>
             </div>
@@ -90,7 +96,7 @@
                 <div class="field">
                     <label class="label">Amount</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Enter Item">
+                        <input class="input" type="number" placeholder="Enter Amount" required>
                     </div>
                 </div>
             </div>
@@ -98,7 +104,7 @@
                 <div class="field">
                     <label class="label">Info</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Enter Item">
+                        <input class="input" type="text" placeholder="Enter Info">
                     </div>
                 </div>
             </div>
@@ -124,13 +130,8 @@
                         </button>
                     </p>
                     <p class="control">
-                        <button class="button">
+                        <button id="cancelItem" class="button">
                         Cancel
-                        </button>
-                    </p>
-                    <p class="control">
-                        <button class="button is-danger">
-                        Delete Item
                         </button>
                     </p>
                     </div>
@@ -138,5 +139,6 @@
             </div>
         </div>
     </section>
+</main>
 </body>
 </html>

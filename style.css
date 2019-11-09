@@ -10,3 +10,15 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
     margin-top: 1rem;
     margin-bottom: 3rem;
 }
+
+main.newItem {
+    opacity: 0;
+}
+
+main.showNewItem {
+    opacity: 1;
+}
+
+input {
+    -moz-appearance: textfield !important;
+}
