@@ -19,6 +19,14 @@ main.showNewItem {
     opacity: 1;
 }
 
+.deleteIcon {
+    opacity: 0;
+}
+
+.showIcon {
+    opacity: 1;
+}
+
 input {
     -moz-appearance: textfield !important;
 }

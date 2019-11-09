@@ -39,7 +39,7 @@
                             </button>
                         </p>
                         <p class="control">
-                            <button class="button is-danger is-outlined">
+                            <button id="showDeleteIcons" class="button is-danger is-outlined">
                             Delete Item from List
                             </button>
                         </p>
@@ -54,24 +54,24 @@
             <table class="table">
                 <thead>
                     <tr>
-                    <th id="deleteIcon"></th>
+                    <th class="deleteIcon"></th>
                     <th><abbr title="ID">ID</abbr></th>
-                    <th><abbr title"Item">Item</abbr></th>
+                    <th><abbr title="Item">Item</abbr></th>
                     <th><abbr title="Amount">Amount</abbr></th>
-                    <th><abbr title="Info">Info</abbr></th>
+                    <th><abbr title="Price">Price</abbr></th>
                     <th><abbr title="Note">Note</abbr></th>
                     </tr>
                 </thead>
                 <tfoot>
-                    <td id="deleteIcon"></td>
-                    <th><abbr title="ID"></abbr></th>
-                    <th><abbr title="Item"></abbr></th>
+                    <td class="deleteIcon"></td>
+                    <th></th>
+                    <th></th>
                     <th><abbr title="Amount">999</abbr></th>
-                    <th><abbr title="Info">$999</abbr></th>
-                    <th><abbr title="Note"></abbr></th>
+                    <th><abbr title="Price">$999</abbr></th>
+                    <th></th>
                 </tfoot>
                 <tr>
-                <th><a id="deleteIcon" class="delete"></a></th>
+                <th><a class="delete deleteIcon"></a></th>
                 <th>1</th>
                 <td>T-Shirt</td>
                 <td>10</td>
@@ -88,7 +88,7 @@
                 <div class="field">
                     <label class="label">Item</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Enter Item" required>
+                        <input class="input" id="itemName" type="text" placeholder="Enter Item" required>
                     </div>
                 </div>
             </div>
@@ -96,15 +96,15 @@
                 <div class="field">
                     <label class="label">Amount</label>
                     <div class="control">
-                        <input class="input" type="number" placeholder="Enter Amount" required>
+                        <input class="input" id="itemAmount" type="number" placeholder="Enter Amount" required>
                     </div>
                 </div>
             </div>
             <div class="column">
                 <div class="field">
-                    <label class="label">Info</label>
+                    <label class="label">Price</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Enter Info">
+                        <input class="input" id="itemPrice" type="number" placeholder="Enter Price">
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@
                 <div class="field">
                     <label class="label">Note</label>
                     <div class="control">
-                        <textarea class="textarea" type="text" rows="1" placeholder="Type notes..."></textarea>
+                        <textarea class="textarea" id="itemNote" type="text" rows="1" placeholder="Type notes..."></textarea>
                     </div>
                 </div>
             </div>
@@ -125,7 +125,7 @@
                 <div class="level-item">
                     <div class="field is-grouped">
                     <p class="control">
-                        <button class="button is-link">
+                        <button type="submit" class="button is-link">
                         Save Item to List
                         </button>
                     </p>
