@@ -1,8 +1,15 @@
 // TOGGLE ++++++++++
 
 // Button - Add New Item will toggle and show the input forms
-$('#addNewItem, #cancelItem').click(function(){
+$('#addNewItem').click(function(){
     $('main.newItem').toggleClass('showNewItem');
+    // Input data has to be reset after every toggle
+    $('[data-itemID], [data-itemName], [data-itemAmount], [data-itemPrice], [data-itemNote]').val('');
+});
+
+// Button - Remove adding list inputs
+$('#cancelItem').click(function(){
+    $('main.newItem').removeClass('showNewItem');
     // Input data has to be reset after every toggle
     $('[data-itemID], [data-itemName], [data-itemAmount], [data-itemPrice], [data-itemNote]').val('');
 });
@@ -10,6 +17,8 @@ $('#addNewItem, #cancelItem').click(function(){
 // ADDING ++++++++++
 
 let itemID = 1;
+let totalAmount = 0;
+let totalPrice = 0;
 
 // When User click Save Item to List, the arrays of datas from the input form should show up on the Table
 $('#submitItem').click(function(event){
@@ -20,28 +29,58 @@ $('#submitItem').click(function(event){
     const itemAmount = $('[data-itemAmount]').val();
     const itemPrice = $('[data-itemPrice]').val();
     const itemNote = $('[data-itemNote]').val();
+
+
+    // Regex shitshow cause bulma reset browser's basic validation function
+    var reg = new RegExp('^[0-9]+$');
+
+    var isNumber = function(value) {
+        return reg.test(value);
+    };
+
+    // if it is not a number, apply is-danger class
+    // else, remove is-danger class
+    if (!isNumber(itemAmount)){
+        $('#itemAmount').addClass('is-danger');
+    } else {
+        $('#itemAmount').removeClass('is-danger');
+    }
+
+    if (!isNumber(itemPrice)){
+        $('#itemPrice').addClass('is-danger');
+    } else {
+        $('#itemPrice').removeClass('is-danger');
+    }
+
+    if (!isNumber(itemAmount) || !isNumber(itemPrice)){
+        return;
+    }
+
+
+    // Calculate Total Amount and Total Price
+
+
+
     // Append value onto the Table
     $('[data-wholeList]').append(`
-    <tr data-itemInput>
-        <th data-deleteIcon><a class="delete"></a></th>
-        <th>${itemID}</th>
-        <td>${itemName}</td>
-        <td>${itemAmount}</td>
-        <td>$ ${itemPrice}</td>
-        <td>${itemNote}</td>
-    </tr>
+        <tr data-itemInput>
+            <th data-deleteIcon><a class="delete"></a></th>
+            <td>${itemName}</td>
+            <td>${itemAmount}</td>
+            <td>$ ${itemPrice}</td>
+            <td>${itemNote}</td>
+        </tr>
     `);
+
+    // Input forms get reset after every submission
+    $('[data-itemID], [data-itemName], [data-itemAmount], [data-itemPrice], [data-itemNote]').val('');
 
     // When User press the Delete Icon, input gets deleted
     $('[data-deleteIcon]').click(function(){
         $('[data-itemInput]').remove('');
     });
 
-    // Item ID should increment for every item, starting from 1
-    itemID++;
-
-    // Item Amount and Price can only be number, if not, the input form should show that it's an error
-})
+});
 
 // DELETE ++++++++++
 

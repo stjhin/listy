@@ -38,6 +38,7 @@
                             Add New Item
                             </button>
                         </p>
+
                     </div>
                 </div>
             </div>
@@ -50,21 +51,12 @@
                 <thead>
                     <tr>
                     <th></th>
-                    <th><abbr title="ID">ID</abbr></th>
                     <th><abbr title="Item">Item</abbr></th>
                     <th><abbr title="Amount">Amount</abbr></th>
                     <th><abbr title="Price">Price</abbr></th>
                     <th><abbr title="Note">Note</abbr></th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <td></td>
-                    <th></th>
-                    <th></th>
-                    <th><abbr title="Total Amount"></abbr></th>
-                    <th><abbr title=" Total Price"></abbr></th>
-                    <th></th>
-                </tfoot>
             </table>
         </div>
     </section>
@@ -82,7 +74,7 @@
             <div class="column">
                 <div class="field">
                     <label class="label">Amount</label>
-                    <div class="control">
+                    <div id='labelAmount' class="control">
                         <input data-itemAmount class="input" id="itemAmount" type="number" placeholder="Enter Amount" required>
                     </div>
                 </div>
@@ -90,7 +82,7 @@
             <div class="column">
                 <div class="field">
                     <label class="label">Price</label>
-                    <div class="control">
+                    <div id='labelPrice' class="control">
                         <input data-itemPrice class="input" id="itemPrice" type="number" placeholder="Enter Price" required>
                     </div>
                 </div>
