@@ -1,5 +1,3 @@
-// Button - Make A New List will reset the list
-
 // Button - Add New Item will toggle and show the input forms
 $('#addNewItem, #cancelItem').click(function(){
     $('main.newItem').toggleClass('showNewItem');
@@ -10,12 +8,8 @@ $('#addNewItem, #cancelItem').click(function(){
 // Button - Delete Item from List will show the Delete Icon for every submitted items on the List
 $('#showDeleteIcons').click(function(){
     $('.deleteIcon').toggleClass('showIcon');
-})
+});
 
-// Operator - Cancel will toggle the input forms
-//$('#cancelItem').click(function(){
-//    $('main.newItem').toggleClass('showNewItem');
-//});
 
 let itemID = 1;
 
@@ -24,7 +18,6 @@ $('#submitItem').click(function(event){
     event.preventDefault();
 
     // Get Value from the Input
-    //const itemID = $('#itemID').val();
     const itemName = $('[data-itemName]').val();
     const itemAmount = $('[data-itemAmount]').val();
     const itemPrice = $('[data-itemPrice]').val();
@@ -44,7 +37,7 @@ $('#submitItem').click(function(event){
     // Item ID should increment for every item, starting from 1
     itemID++;
 
-    //
+    // Item Amount and Price can only be number, if not, the input form should show that it's an error
 })
 
 // Clear the submitted Items on the Table List
