@@ -29,7 +29,7 @@
                 <div class="level-item">
                     <div class="field is-grouped">
                         <p class="control">
-                            <button class="button is-link is-outlined">
+                            <button id="resetList" class="button is-link is-outlined">
                             Make a New List
                             </button>
                         </p>
@@ -51,7 +51,7 @@
     <!--This will show List result-->
     <section class="container">
         <div class="listResult">
-            <table class="table">
+            <table data-wholeList class="table">
                 <thead>
                     <tr>
                     <th class="deleteIcon"></th>
@@ -66,18 +66,10 @@
                     <td class="deleteIcon"></td>
                     <th></th>
                     <th></th>
-                    <th><abbr title="Amount">999</abbr></th>
-                    <th><abbr title="Price">$999</abbr></th>
+                    <th><abbr title="Amount"></abbr></th>
+                    <th><abbr title="Price"></abbr></th>
                     <th></th>
                 </tfoot>
-                <tr>
-                <th><a class="delete deleteIcon"></a></th>
-                <th>1</th>
-                <td>T-Shirt</td>
-                <td>10</td>
-                <td>$10</td>
-                <td>Find cheaper to buy in bulk</td>
-                </tr>
             </table>
         </div>
     </section>
@@ -88,7 +80,7 @@
                 <div class="field">
                     <label class="label">Item</label>
                     <div class="control">
-                        <input class="input" id="itemName" type="text" placeholder="Enter Item" required>
+                        <input data-itemName class="input" id="itemName" type="text" placeholder="Enter Item" required>
                     </div>
                 </div>
             </div>
@@ -96,7 +88,7 @@
                 <div class="field">
                     <label class="label">Amount</label>
                     <div class="control">
-                        <input class="input" id="itemAmount" type="number" placeholder="Enter Amount" required>
+                        <input data-itemAmount class="input" id="itemAmount" type="number" placeholder="Enter Amount" required>
                     </div>
                 </div>
             </div>
@@ -104,7 +96,7 @@
                 <div class="field">
                     <label class="label">Price</label>
                     <div class="control">
-                        <input class="input" id="itemPrice" type="number" placeholder="Enter Price">
+                        <input data-itemPrice class="input" id="itemPrice" type="number" placeholder="Enter Price" required>
                     </div>
                 </div>
             </div>
@@ -112,7 +104,7 @@
                 <div class="field">
                     <label class="label">Note</label>
                     <div class="control">
-                        <textarea class="textarea" id="itemNote" type="text" rows="1" placeholder="Type notes..."></textarea>
+                        <textarea data-itemNote class="textarea" id="itemNote" type="text" rows="1" placeholder="Type notes..."></textarea>
                     </div>
                 </div>
             </div>
@@ -124,16 +116,12 @@
             <div class="level-right">
                 <div class="level-item">
                     <div class="field is-grouped">
-                    <p class="control">
-                        <button type="submit" class="button is-link">
-                        Save Item to List
-                        </button>
-                    </p>
-                    <p class="control">
-                        <button id="cancelItem" class="button">
-                        Cancel
-                        </button>
-                    </p>
+                        <p class="control">
+                            <button id="submitItem" type="submit" class="button is-link">Save Item to List</button>
+                        </p>
+                        <p class="control">
+                            <button id="cancelItem" class="button">Cancel</button>
+                        </p>
                     </div>
                 </div>
             </div>
