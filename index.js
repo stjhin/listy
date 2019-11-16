@@ -1,3 +1,5 @@
+// TOGGLE ++++++++++
+
 // Button - Add New Item will toggle and show the input forms
 $('#addNewItem, #cancelItem').click(function(){
     $('main.newItem').toggleClass('showNewItem');
@@ -5,11 +7,7 @@ $('#addNewItem, #cancelItem').click(function(){
     $('[data-itemID], [data-itemName], [data-itemAmount], [data-itemPrice], [data-itemNote]').val('');
 });
 
-// Button - Delete Item from List will show the Delete Icon for every submitted items on the List
-$('#showDeleteIcons').click(function(){
-    $('.deleteIcon').toggleClass('showIcon');
-});
-
+// ADDING ++++++++++
 
 let itemID = 1;
 
@@ -24,8 +22,8 @@ $('#submitItem').click(function(event){
     const itemNote = $('[data-itemNote]').val();
     // Append value onto the Table
     $('[data-wholeList]').append(`
-    <tr>
-        <th><a class="delete deleteIcon"></a></th>
+    <tr data-itemInput>
+        <th data-deleteIcon><a class="delete"></a></th>
         <th>${itemID}</th>
         <td>${itemName}</td>
         <td>${itemAmount}</td>
@@ -34,13 +32,20 @@ $('#submitItem').click(function(event){
     </tr>
     `);
 
+    // When User press the Delete Icon, input gets deleted
+    $('[data-deleteIcon]').click(function(){
+        $('[data-itemInput]').remove('');
+    });
+
     // Item ID should increment for every item, starting from 1
     itemID++;
 
     // Item Amount and Price can only be number, if not, the input form should show that it's an error
 })
 
+// DELETE ++++++++++
+
 // Clear the submitted Items on the Table List
 $('#resetList').click(function(){
     $('[data-wholeList]').val('');
-})
+});
