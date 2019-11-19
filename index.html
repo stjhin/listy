@@ -22,6 +22,23 @@
         </p>
         </div>
     </section>
+    <!-- Tile to show the Total -->
+    <section class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-8">
+                <div class="tile">
+                    <div data-tileTotal class="tile is-parent is-vertical">
+                        <article id="priceTotal" class="tile is-child notification is-info box">
+                            <p class="title">Total Price</p>
+                        </article>
+                        <article id="amountTotal" class="tile is-child notification is-link box">
+                            <p class="title">Total Amount</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!--This will contain a button to add another Item-->
     <section class="container">
         <div class="operator">
@@ -29,16 +46,13 @@
                 <div class="level-item">
                     <div class="field is-grouped">
                         <p class="control">
-                            <button id="resetList" class="button is-link is-outlined">
-                            Make a New List
-                            </button>
+                            <button id="calculateTotal" class="button is-link is-outlined">Calculate Total</button>
+                        <p class="control">
+                            <button id="resetList" class="button is-link is-outlined">Make a New List</button>
                         </p>
                         <p class="control">
-                            <button id="addNewItem" class="button is-success is-outlined">
-                            Add New Item
-                            </button>
+                            <button id="addNewItem" class="button is-success is-outlined">Add New Item</button>
                         </p>
-
                     </div>
                 </div>
             </div>
@@ -47,7 +61,7 @@
     <!--This will show List result-->
     <section class="container">
         <div class="listResult">
-            <table data-wholeList class="table">
+            <table data-wholeList class="table is-hoverable">
                 <thead>
                     <tr>
                     <th></th>

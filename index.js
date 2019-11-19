@@ -42,35 +42,41 @@ $('#submitItem').click(function(event){
     // else, remove is-danger class
     if (!isNumber(itemAmount)){
         $('#itemAmount').addClass('is-danger');
+        $('#labelAmount').append(`<p class="help is-danger">Invalid input</p>`)
     } else {
         $('#itemAmount').removeClass('is-danger');
+        $('#labelAmount p').empty('');
     }
 
     if (!isNumber(itemPrice)){
         $('#itemPrice').addClass('is-danger');
+        $('#labelPrice').append(`<p class="help is-danger">Invalid input</p>`)
     } else {
         $('#itemPrice').removeClass('is-danger');
+        $('#labelPrice p').empty('');
     }
 
     if (!isNumber(itemAmount) || !isNumber(itemPrice)){
         return;
     }
 
+    totalAmount = parseInt(itemAmount) + totalAmount
+    totalPrice = parseInt(itemPrice) * parseInt(itemAmount)
 
-    // Calculate Total Amount and Total Price
-
-
-
+    $('#priceTotal').append(`<p class="title">$ ${totalPrice}</p>`);
+    $('#amountTotal').append(`<p class="title">${totalAmount}</p>`);
+    
     // Append value onto the Table
     $('[data-wholeList]').append(`
         <tr data-itemInput>
             <th data-deleteIcon><a class="delete"></a></th>
-            <td>${itemName}</td>
-            <td>${itemAmount}</td>
-            <td>$ ${itemPrice}</td>
-            <td>${itemNote}</td>
+            <th>${itemName}</th>
+            <th>${itemAmount}</th>
+            <th>$ ${itemPrice}</th>
+            <th>${itemNote}</th>
         </tr>
     `);
+
 
     // Input forms get reset after every submission
     $('[data-itemID], [data-itemName], [data-itemAmount], [data-itemPrice], [data-itemNote]').val('');
@@ -79,6 +85,8 @@ $('#submitItem').click(function(event){
     $('[data-deleteIcon]').click(function(){
         $('[data-itemInput]').remove('');
     });
+
+    
 
 });
 
