@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Listy</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -22,27 +22,52 @@
         </p>
         </div>
     </section>
-    <!-- Tile to show the Total -->
     <section class="container">
+        <div class="tile">
+        <div class="listResult">
+            <table data-wholeList class="table is-hoverable">
+                <thead>
+                    <tr>
+                    <th></th>
+                    <th><abbr title="Item">Item</abbr></th>
+                    <th><abbr title="Amount">Amount</abbr></th>
+                    <th><abbr title="Price">Price</abbr></th>
+                    <th><abbr title="Note">Note</abbr></th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                    <th></th>
+                    <th><abbr id="priceTotal">Total Price</abbr></th>
+                    <th><abbr id="amountTotal">Total Amount</abbr></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    <!-- Tile to show the Total 
         <div class="tile is-ancestor">
             <div class="tile is-8">
                 <div class="tile">
-                    <div data-tileTotal class="tile is-parent is-vertical">
-                        <article id="priceTotal" class="tile is-child notification is-info box">
-                            <p class="title">Total Price</p>
+                    <div data-tileTotal class="level">
+                        <article id="priceTotal" class="level-item notification is-info box space-1 has-text-centered">
+                            <p class="heading">Total Price</p>
+                            <br><br>
                         </article>
-                        <article id="amountTotal" class="tile is-child notification is-link box">
-                            <p class="title">Total Amount</p>
+                        <article id="amountTotal" class="level-item notification is-link box space-1 has-text-centered">
+                            <p class="heading">Total Amount</p>
+                            <br><br>
                         </article>
                     </div>
                 </div>
-            </div>
+            </div> -->
+        </div>
+        </div>
         </div>
     </section>
     <!--This will contain a button to add another Item-->
     <section class="container">
         <div class="operator">
-            <div class="level-right">
+            <div class="level-left">
                 <div class="level-item">
                     <div class="field is-grouped">
                         <p class="control">
@@ -59,21 +84,6 @@
         </div>
     </section>
     <!--This will show List result-->
-    <section class="container">
-        <div class="listResult">
-            <table data-wholeList class="table is-hoverable">
-                <thead>
-                    <tr>
-                    <th></th>
-                    <th><abbr title="Item">Item</abbr></th>
-                    <th><abbr title="Amount">Amount</abbr></th>
-                    <th><abbr title="Price">Price</abbr></th>
-                    <th><abbr title="Note">Note</abbr></th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </section>
 <main class="newItem">
     <section class="container">
         <div class="columns">
@@ -114,7 +124,7 @@
 <!--This will contain buttons to Save, Cancel, Delete Item input-->
     <section class="container">
         <div class="operator">
-            <div class="level-right">
+            <div class="level-left">
                 <div class="level-item">
                     <div class="field is-grouped">
                         <p class="control">

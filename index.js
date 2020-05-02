@@ -61,7 +61,7 @@ $('#submitItem').click(function(event){
     }
 
     totalAmount = parseInt(itemAmount) + totalAmount
-    totalPrice = parseInt(itemPrice) * parseInt(itemAmount)
+    totalPrice = totalPrice+(parseInt(itemPrice) * parseInt(itemAmount))
 
     $('#priceTotal').append(`<p class="title">$ ${totalPrice}</p>`);
     $('#amountTotal').append(`<p class="title">${totalAmount}</p>`);
